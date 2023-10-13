@@ -24,9 +24,4 @@ for element in text_elements:
     article_dict = {'title': title, 'preview': preview}
     list.append(article_dict)
 
-pandas_df['terrestrial_date'] = pd.to_datetime(pandas_df['terrestrial_date'])
-pandas_df['sol'] = pandas_df['sol'].astype('Int64')
-pandas_df['ls'] = pandas_df['ls'].astype('Int64')
-pandas_df['month'] = pandas_df['month'].astype('Int64')
-pandas_df['min_temp'] = pandas_df['min_temp'].astype(float)
-pandas_df['pressure'] = pandas_df['pressure'].astype(float)
+table = mars_soup.find_all("tr",class_="data-row")
